@@ -6,10 +6,16 @@ COPY . /app
 
 RUN apt-get update && \
     apt-get install -y tar bzip2 && \
-    apt-get clean
+    apt-get install -y python3 && \ 
+    apt-get clean 
+
+
+    # python3-pip
 
 RUN tar -xjf slic3r-1.3.0-linux-x64.tar.bz2
 
-RUN cd Slic3r
+# RUN pip install requests 
 
-CMD sudo ./Slic3r --help
+ENTRYPOINT [ "python3" ]
+
+CMD [ "server.py" ]
