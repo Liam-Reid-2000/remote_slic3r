@@ -48,7 +48,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 
             
+port = int(os.environ.get("PORT", 5000))
 
 if __name__ == '__main__':
-    server = HTTPServer(('0.0.0.0', 5000), RequestHandler)
+    server = HTTPServer(('0.0.0.0', port), RequestHandler)
     server.serve_forever()
