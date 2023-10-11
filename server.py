@@ -34,7 +34,7 @@ class RequestHandler(BaseHTTPRequestHandler):
           f.write(data)
           
       # command = "cd .. && cd Slic3r && slic3r-console --load config.ini C:\\Users\\Microwave\\remote_slic3r\\uploads\\upload.obj"
-      command = "cd Slic3r && ./Slic3r --load /app/config.ini --scale 10 /app/uploads/upload.obj"
+      command = "cd Slic3r && ./Slic3r --load /app/config.ini --scale 20 /app/uploads/upload.obj"
 
       result = os.system(command)
       
